@@ -1,0 +1,22 @@
+name: pserv
+version: '0.9' 
+summary: A new trial as a service application by innovation labs
+description: |
+  A very good application to tell you a friendly hello!
+
+grade: devel 
+confinement: strict
+
+apps:
+  pserv:
+    command: bin/pserv
+    daemon: simple
+    restart-condition: always
+    plugs: [network-bind]
+
+
+
+parts:
+  main:
+    plugin: python
+    source-type: local
